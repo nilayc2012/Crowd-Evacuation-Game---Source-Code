@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Crowd Evacuation with Singleplayer and multiplayer.CSharp.Plugins.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\ButtonTasks.cs">
+    <Files>
+      <File FileName="Assets\LoadUserIDMP.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\AgentLocator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\ButtonTasks.cs" Line="1" Column="1" />
+      <File FileName="Assets\UpdateChecker.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\playAudio.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

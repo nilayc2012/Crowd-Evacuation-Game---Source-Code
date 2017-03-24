@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crowd Evacuation with Singleplayer and multiplayer.CSharp.Plugins", "Crowd Evacuation with Singleplayer and multiplayer.CSharp.Plugins.csproj", "{FD1F2DD1-2402-F9A2-9664-2BA2396FE904}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crowd Evacuation with Singleplayer and multiplayer.CSharp", "Crowd Evacuation with Singleplayer and multiplayer.CSharp.csproj", "{97A1C721-D791-AA3E-DCE0-66E4A5589522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crowd Evacuation with Singleplayer and multiplayer.CSharp.Editor.Plugins", "Crowd Evacuation with Singleplayer and multiplayer.CSharp.Editor.Plugins.csproj", "{E3C0DCBA-7412-2A4B-62B6-ED30F1BAEF0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD1F2DD1-2402-F9A2-9664-2BA2396FE904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD1F2DD1-2402-F9A2-9664-2BA2396FE904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD1F2DD1-2402-F9A2-9664-2BA2396FE904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD1F2DD1-2402-F9A2-9664-2BA2396FE904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97A1C721-D791-AA3E-DCE0-66E4A5589522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A1C721-D791-AA3E-DCE0-66E4A5589522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A1C721-D791-AA3E-DCE0-66E4A5589522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97A1C721-D791-AA3E-DCE0-66E4A5589522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3C0DCBA-7412-2A4B-62B6-ED30F1BAEF0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C0DCBA-7412-2A4B-62B6-ED30F1BAEF0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3C0DCBA-7412-2A4B-62B6-ED30F1BAEF0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3C0DCBA-7412-2A4B-62B6-ED30F1BAEF0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

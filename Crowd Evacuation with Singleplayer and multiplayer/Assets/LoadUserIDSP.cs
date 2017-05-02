@@ -10,7 +10,7 @@ public class LoadUserIDSP : MonoBehaviour {
         {
 
 #if UNITY_EDITOR
-            string url = "http://localhost/get_user_id.php?type=sp";
+            string url = "http://spanky.rutgers.edu/crowdevacgame/Real/get_user_id.php?type=sp";
 #else
             string url ;
             if(InternetConnectivityCheck.adminFlag)

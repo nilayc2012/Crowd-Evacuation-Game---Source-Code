@@ -165,7 +165,7 @@ public class ButtonTasks : MonoBehaviour {
         {
             string url;
 #if UNITY_EDITOR
-            url = "http://localhost/login.php"; //-- local
+            url = "http://spanky.rutgers.edu/crowdevacgame/login.php"; //-- local
 #else
             url = "http://spanky.rutgers.edu/crowdevacgame/login.php"; //--live
 #endif
@@ -238,7 +238,7 @@ public class ButtonTasks : MonoBehaviour {
         {
             string url;
 #if UNITY_EDITOR
-            url = "http://localhost/register.php"; //-- local
+            url = "http://spanky.rutgers.edu/crowdevacgame/register.php"; //-- local
 #else
             url = "http://spanky.rutgers.edu/crowdevacgame/register.php"; //--live
 #endif

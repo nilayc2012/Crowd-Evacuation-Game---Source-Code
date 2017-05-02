@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class NavigationController : MonoBehaviour {
 
@@ -42,14 +43,14 @@ public class NavigationController : MonoBehaviour {
 
         path = new NavMeshPath();
 
-        int l = GameObject.Find("los").transform.GetChild(1).GetComponent<Dropdown>().value;
-        string los = GameObject.Find("los").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
+        int l = Camera.main.gameObject.GetComponent<bringUpMenu>().losDD.GetComponent<Dropdown>().value;
+        string los = Camera.main.gameObject.GetComponent<bringUpMenu>().losDD.GetComponent<Dropdown>().options[l].text;
 
-        l = GameObject.Find("loa").transform.GetChild(1).GetComponent<Dropdown>().value;
-        string loa = GameObject.Find("loa").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
+        l = Camera.main.gameObject.GetComponent<bringUpMenu>().loaDD.GetComponent<Dropdown>().value;
+        string loa = Camera.main.gameObject.GetComponent<bringUpMenu>().loaDD.GetComponent<Dropdown>().options[l].text;
 
-        l = GameObject.Find("homo").transform.GetChild(1).GetComponent<Dropdown>().value;
-        string homo = GameObject.Find("homo").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
+        l = Camera.main.gameObject.GetComponent<bringUpMenu>().lohDD.GetComponent<Dropdown>().value;
+        string homo = Camera.main.gameObject.GetComponent<bringUpMenu>().lohDD.GetComponent<Dropdown>().options[l].text;
 
         assignAttributes(los,loa,homo);
         seeExit = 0;

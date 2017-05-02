@@ -21,7 +21,7 @@ public class bringUpMenu : MonoBehaviour
     //for SHowData
     public Camera mainCamera;
     public Canvas menuWithEndMid;
-    public Canvas serviceMenu;
+    public GameObject serviceMenu;
     //objects to disappear
     public GameObject endGame;
     public GameObject midGame;
@@ -35,6 +35,8 @@ public class bringUpMenu : MonoBehaviour
     //object to appear
     //public GameObject image;
     private IEnumerator coroutine;
+
+    public GameObject losDD, loaDD, lohDD;
 
     //public static bool running=false;
     public static int running = 0;
@@ -259,7 +261,6 @@ public class bringUpMenu : MonoBehaviour
         hideAllUsersItems();
         destroyAllBestHeatmapItems();
         StartCoroutine(getHeatMapData("heatmap"));
-        colorChangeHM();
     }
 
     public void displayBestHeatMap()
@@ -268,7 +269,6 @@ public class bringUpMenu : MonoBehaviour
         hideAllUsersItems();
         destroyAllBestHeatmapItems();
         StartCoroutine(getHeatMapData("pathtrace"));
-        colorChange();
     }
 
     public void hideAllUsersItems()
@@ -278,7 +278,7 @@ public class bringUpMenu : MonoBehaviour
         foreach (GameObject wall1 in allWalls)
         {
             //if (wall1.GetComponent<NewWallScript> () != null) {
-            MeshRenderer render = wall1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = wall1.gameObject.GetComponent<MeshRenderer>();
             render.enabled = false;
             //}
         }
@@ -294,7 +294,7 @@ public class bringUpMenu : MonoBehaviour
         GameObject[] allPillars = GameObject.FindGameObjectsWithTag("pillar");
         foreach (GameObject pillar1 in allPillars)
         {
-            MeshRenderer render = pillar1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = pillar1.gameObject.GetComponent<MeshRenderer>();
             render.enabled = false;
         }
     }
@@ -305,7 +305,7 @@ public class bringUpMenu : MonoBehaviour
         foreach (GameObject wall1 in allWalls)
         {
             //if (wall1.GetComponent<NewWallScript> () != null) {
-            MeshRenderer render = wall1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = wall1.gameObject.GetComponent<MeshRenderer>();
             render.material = regular;
             render.enabled = true;
             //}
@@ -315,7 +315,7 @@ public class bringUpMenu : MonoBehaviour
         foreach (GameObject outer1 in allouters)
         {
             //if (wall1.GetComponent<NewWallScript> () != null) {
-            MeshRenderer render = outer1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = outer1.gameObject.GetComponent<MeshRenderer>();
             render.material = regular;
             render.enabled = true;
             //}
@@ -324,9 +324,83 @@ public class bringUpMenu : MonoBehaviour
         GameObject[] allPillars = GameObject.FindGameObjectsWithTag("pillar");
         foreach (GameObject pillar1 in allPillars)
         {
-            MeshRenderer render = pillar1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = pillar1.gameObject.GetComponent<MeshRenderer>();
             render.material = regular;
             render.enabled = true;
+        }
+    }
+
+    public void colorChangeBest()
+    {
+        GameObject[] allWalls = GameObject.FindGameObjectsWithTag("wall");
+        foreach (GameObject wall1 in allWalls)
+        {
+            if(wall1.name== "besthmWall")
+            { 
+            //if (wall1.GetComponent<NewWallScript> () != null) {
+            MeshRenderer render = wall1.gameObject.GetComponent<MeshRenderer>();
+            render.material = regular;
+            render.enabled = true;
+
+            }
+        }
+
+        GameObject[] allouters = GameObject.FindGameObjectsWithTag("outerWall");
+        foreach (GameObject outer1 in allouters)
+        {
+            //if (wall1.GetComponent<NewWallScript> () != null) {
+            MeshRenderer render = outer1.gameObject.GetComponent<MeshRenderer>();
+            render.material = regular;
+            render.enabled = true;
+            //}
+        }
+
+        GameObject[] allPillars = GameObject.FindGameObjectsWithTag("pillar");
+        foreach (GameObject pillar1 in allPillars)
+        {
+            if (pillar1.name == "besthmPillar")
+            {
+                MeshRenderer render = pillar1.gameObject.GetComponent<MeshRenderer>();
+                render.material = regular;
+                render.enabled = true;
+            }
+        }
+    }
+
+    public void colorChangeRealHM()
+    {
+        GameObject[] allWalls = GameObject.FindGameObjectsWithTag("wall");
+        foreach (GameObject wall1 in allWalls)
+        {
+            if (wall1.name == "besthmWall")
+            {
+                //if (wall1.GetComponent<NewWallScript> () != null) {
+                MeshRenderer render = wall1.gameObject.GetComponent<MeshRenderer>();
+                render.material = heatMapMaterial;
+                render.enabled = true;
+            }
+            //}
+        }
+        GameObject[] allouters = GameObject.FindGameObjectsWithTag("outerWall");
+        foreach (GameObject outer1 in allouters)
+        {
+
+            //if (wall1.GetComponent<NewWallScript> () != null) {
+            MeshRenderer render = outer1.gameObject.GetComponent<MeshRenderer>();
+            render.material = heatMapMaterial;
+            render.enabled = true;
+            //}
+        }
+
+        GameObject[] allPillars = GameObject.FindGameObjectsWithTag("pillar");
+        foreach (GameObject pillar1 in allPillars)
+        {
+            if (pillar1.name == "besthmPillar")
+            {
+                MeshRenderer render = pillar1.gameObject.GetComponent<MeshRenderer>();
+                render.material = heatMapMaterial;
+                render.enabled = true;
+            }
         }
     }
 
@@ -336,7 +410,7 @@ public class bringUpMenu : MonoBehaviour
         foreach (GameObject wall1 in allWalls)
         {
             //if (wall1.GetComponent<NewWallScript> () != null) {
-            MeshRenderer render = wall1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = wall1.gameObject.GetComponent<MeshRenderer>();
             render.material = heatMapMaterial;
             render.enabled = true;
             //}
@@ -345,7 +419,7 @@ public class bringUpMenu : MonoBehaviour
         foreach (GameObject outer1 in allouters)
         {
             //if (wall1.GetComponent<NewWallScript> () != null) {
-            MeshRenderer render = outer1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = outer1.gameObject.GetComponent<MeshRenderer>();
             render.material = heatMapMaterial;
             render.enabled = true;
             //}
@@ -354,7 +428,7 @@ public class bringUpMenu : MonoBehaviour
         GameObject[] allPillars = GameObject.FindGameObjectsWithTag("pillar");
         foreach (GameObject pillar1 in allPillars)
         {
-            MeshRenderer render = pillar1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = pillar1.gameObject.GetComponent<MeshRenderer>();
             render.material = heatMapMaterial;
             render.enabled = true;
         }
@@ -366,7 +440,7 @@ public class bringUpMenu : MonoBehaviour
         foreach (GameObject wall1 in allWalls)
         {
             //if (wall1.GetComponent<NewWallScript> () != null) {
-            MeshRenderer render = wall1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = wall1.gameObject.GetComponent<MeshRenderer>();
             render.material = heatMapWallMaterial;
             render.enabled = true;
             //}
@@ -377,7 +451,7 @@ public class bringUpMenu : MonoBehaviour
         foreach (GameObject outer1 in allouters)
         {
             //if (wall1.GetComponent<NewWallScript> () != null) {
-            MeshRenderer render = outer1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = outer1.gameObject.GetComponent<MeshRenderer>();
             render.material = heatMapOuterMaterial;
             render.enabled = true;
             //}
@@ -386,7 +460,7 @@ public class bringUpMenu : MonoBehaviour
         GameObject[] allPillars = GameObject.FindGameObjectsWithTag("pillar");
         foreach (GameObject pillar1 in allPillars)
         {
-            MeshRenderer render = pillar1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = pillar1.gameObject.GetComponent<MeshRenderer>();
             render.material = heatMapPillarMaterial;
             render.enabled = true;
         }
@@ -409,7 +483,7 @@ public class bringUpMenu : MonoBehaviour
         foreach (GameObject wall1 in allWalls)
         {
             //if (wall1.GetComponent<NewWallScript> () != null) {
-            MeshRenderer render = wall1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = wall1.gameObject.GetComponent<MeshRenderer>();
             render.enabled = true;
             //}
         }
@@ -425,7 +499,7 @@ public class bringUpMenu : MonoBehaviour
         GameObject[] allPillars = GameObject.FindGameObjectsWithTag("pillar");
         foreach (GameObject pillar1 in allPillars)
         {
-            MeshRenderer render = pillar1.gameObject.GetComponentInChildren<MeshRenderer>();
+            MeshRenderer render = pillar1.gameObject.GetComponent<MeshRenderer>();
             render.enabled = true;
         }
     }
@@ -460,14 +534,14 @@ public class bringUpMenu : MonoBehaviour
 
     IEnumerator getHeatMapData(string type)
     {
-        int l = GameObject.Find("los").transform.GetChild(1).GetComponent<Dropdown>().value;
-        string los = GameObject.Find("los").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
+        int l = Camera.main.gameObject.GetComponent<bringUpMenu>().losDD.GetComponent<Dropdown>().value;
+        string los = Camera.main.gameObject.GetComponent<bringUpMenu>().losDD.GetComponent<Dropdown>().options[l].text;
 
-        l = GameObject.Find("loa").transform.GetChild(1).GetComponent<Dropdown>().value;
-        string loa = GameObject.Find("loa").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
+        l = Camera.main.gameObject.GetComponent<bringUpMenu>().loaDD.GetComponent<Dropdown>().value;
+        string loa = Camera.main.gameObject.GetComponent<bringUpMenu>().loaDD.GetComponent<Dropdown>().options[l].text;
 
-        l = GameObject.Find("homo").transform.GetChild(1).GetComponent<Dropdown>().value;
-        string homo = GameObject.Find("homo").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
+        l = Camera.main.gameObject.GetComponent<bringUpMenu>().lohDD.GetComponent<Dropdown>().value;
+        string homo = Camera.main.gameObject.GetComponent<bringUpMenu>().lohDD.GetComponent<Dropdown>().options[l].text;
 
         string tlos = "", tloa = "", thomo = "";
 
@@ -475,7 +549,7 @@ public class bringUpMenu : MonoBehaviour
         string runId = "";
 
 #if UNITY_EDITOR
-        string url = "http://localhost/getheatmapdata.php"; //--local 
+        string url = "http://spanky.rutgers.edu/crowdevacgame/Real/getheatmapdata.php"; //--local 
 #else
             string url ;
             if(InternetConnectivityCheck.adminFlag)
@@ -527,7 +601,8 @@ public class bringUpMenu : MonoBehaviour
                     GameObject Wallobj = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     Wallobj.name = "besthmWall";
                     Wallobj.tag = "wall";
-                    Wallobj.GetComponent<Renderer>().material.color = new Color(177F / 255F, 229F / 255F, 229F / 255F, 30F / 255F);
+                    //Wallobj.GetComponent<Renderer>().material.color = new Color(177F / 255F, 229F / 255F, 229F / 255F, 30F / 255F);
+                    //Wallobj.GetComponent<Renderer>().material = regular;
                     // for each wall info (Position, Rotation, Scale)
                     foreach (XmlNode transformInfo in cnode.ChildNodes)
                     {
@@ -613,8 +688,8 @@ public class bringUpMenu : MonoBehaviour
                     GameObject Pillarobj = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
                     Pillarobj.name = "besthmPillar";
                     Pillarobj.tag = "pillar";
-                    Pillarobj.GetComponent<Renderer>().material.color = new Color(0F, 0F, 0F);
-
+                    //Pillarobj.GetComponent<Renderer>().material.color = new Color(0F, 0F, 0F);
+                    //Pillarobj.GetComponent<Renderer>().material= regular;
                     // for each door info (Position, Rotation, Scale)
                     foreach (XmlNode transformInfo in cnode.ChildNodes)
                     {
@@ -690,11 +765,10 @@ public class bringUpMenu : MonoBehaviour
             }
         }
 
-
         if (type.Equals("pathtrace"))
         {
 #if UNITY_EDITOR
-            url = "http://localhost/get_image.php?runid=" + runId + "&scene=" + SceneManager.GetActiveScene().name;   //---local
+            url = "http://spanky.rutgers.edu/crowdevacgame/Real/get_image.php?runid=" + runId + "&scene=" + SceneManager.GetActiveScene().name;   //---local
 #else
 
             if(InternetConnectivityCheck.adminFlag)
@@ -712,7 +786,7 @@ public class bringUpMenu : MonoBehaviour
         else
         {
 #if UNITY_EDITOR
-            url = "http://localhost/get_heatmap_image.php?runid=" + runId + "&scene=" + SceneManager.GetActiveScene().name;   //---local
+            url = "http://spanky.rutgers.edu/crowdevacgame/Real/get_heatmap_image.php?runid=" + runId + "&scene=" + SceneManager.GetActiveScene().name;   //---local
 #else
 
             if(InternetConnectivityCheck.adminFlag)
@@ -738,10 +812,17 @@ public class bringUpMenu : MonoBehaviour
         www = new WWW(url);
         yield return www;
 
-
-        //byte[] bytes = new byte[image.Length * sizeof(char)];
-        //System.Buffer.BlockCopy(image.ToCharArray(), 0, bytes, 0, bytes.Length);
-        byte[] bytes = www.bytes;
+        if (type.Equals("pathtrace"))
+        {
+            colorChangeBest();
+        }
+        else
+        {
+            colorChangeRealHM();
+        }
+            //byte[] bytes = new byte[image.Length * sizeof(char)];
+            //System.Buffer.BlockCopy(image.ToCharArray(), 0, bytes, 0, bytes.Length);
+            byte[] bytes = www.bytes;
 
         mainCam.transform.localEulerAngles = new Vector3(90f, 270f, 0f);
         //hide info stuff
@@ -804,13 +885,13 @@ public class bringUpMenu : MonoBehaviour
 
             wall.tag = "prevwall";
             DontDestroyOnLoad(wall);
-            if (wall.GetComponent<WallDetector>().panel != null)
+            if (wall.GetComponent<WallDetector>()!=null && wall.GetComponent<WallDetector>().panel != null)
             {
                 DontDestroyOnLoad(wall.GetComponent<WallDetector>().panel.transform.parent);
                 DontDestroyOnLoad(wall.GetComponent<WallDetector>().panel);
             }
         }
-        GameObject[] doors = GameObject.FindGameObjectsWithTag("door");
+        GameObject[] doors = GameObject.FindGameObjectsWithTag("door"); 
         foreach (GameObject door in doors)
         {
             //door.GetComponent<doorOpeningScript>().enabled = false;
@@ -913,7 +994,7 @@ public class bringUpMenu : MonoBehaviour
         crowdflag = false;
         timeFlag = false;
         timeConst = 0.0f;
-        serviceMenu.enabled = false;
+        serviceMenu.SetActive(false);
         changeTimeConst = 0.0f;
 
         //plane are calculation
@@ -1005,7 +1086,7 @@ public class bringUpMenu : MonoBehaviour
 
         if (Camera.main.GetComponent<makeDoor>().enabled == false && Camera.main.GetComponent<makePillar>().enabled == false && Camera.main.GetComponent<makeWall>().enabled == false)
         {
-            if((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))&&(menuEnabled==false && serviceMenu.enabled==false&&GameObject.Find("midGame") ==null)&&!simflag)
+            if((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))&&(menuEnabled==false && serviceMenu.activeSelf==false&&GameObject.Find("midGame") ==null)&&!simflag)
             {
                 GameObject[] objects = Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[];
                 foreach (GameObject g in objects)
@@ -1058,7 +1139,7 @@ public class bringUpMenu : MonoBehaviour
             {
                 menuEnabled = false;
                 menu.enabled = false;
-                serviceMenu.enabled = false;
+                serviceMenu.SetActive(false);
                 noList = true;
                 Camera.main.GetComponent<MouseLook>().enabled = false;
                 mainCam.GetComponent<mainCameraControls>().enabled = false;
@@ -1098,7 +1179,7 @@ public class bringUpMenu : MonoBehaviour
                     mainCam.GetComponent<mainCameraControls>().enabled = true;
                 }
                 else
-                    serviceMenu.enabled = true;
+                    serviceMenu.SetActive(true);
 
             }
         }
@@ -1270,7 +1351,7 @@ public class bringUpMenu : MonoBehaviour
     public void configureCrowd()
     {
         //loadIntersections();
-        serviceMenu.enabled = true;
+        serviceMenu.SetActive(true);
         crowdflag = true;
         menuEnabled = false;
         menu.enabled = false;
@@ -1290,14 +1371,14 @@ public class bringUpMenu : MonoBehaviour
         simflag = true;
 
 
-        int l = GameObject.Find("loa").transform.GetChild(1).GetComponent<Dropdown>().value;
-        string loa = GameObject.Find("loa").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
+        int l = Camera.main.gameObject.GetComponent<bringUpMenu>().loaDD.GetComponent<Dropdown>().value;
+        string loa = Camera.main.gameObject.GetComponent<bringUpMenu>().loaDD.GetComponent<Dropdown>().options[l].text;
 
-        l = GameObject.Find("homo").transform.GetChild(1).GetComponent<Dropdown>().value;
-        string homo = GameObject.Find("homo").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
+        l = Camera.main.gameObject.GetComponent<bringUpMenu>().lohDD.GetComponent<Dropdown>().value;
+        string homo = Camera.main.gameObject.GetComponent<bringUpMenu>().lohDD.GetComponent<Dropdown>().options[l].text;
 
-        l = GameObject.Find("los").transform.GetChild(1).GetComponent<Dropdown>().value;
-        string los = GameObject.Find("los").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
+        l = Camera.main.gameObject.GetComponent<bringUpMenu>().losDD.GetComponent<Dropdown>().value;
+        string los = Camera.main.gameObject.GetComponent<bringUpMenu>().losDD.GetComponent<Dropdown>().options[l].text;
 
         UnityEngine.Random.InitState(GameObject.Find("GameController").GetComponent<GameController>().listOfConfigurations.IndexOf(new CrowdConfiguration(los[0].ToString(), loa, homo))+1);
 
@@ -1371,7 +1452,7 @@ public class bringUpMenu : MonoBehaviour
         GameObject.Find("GameController").GetComponent<ConnectionScript>().enabled = false;
         menu.enabled = false;
         menuEnabled = false;
-        serviceMenu.enabled = false;
+        serviceMenu.SetActive(false);
         mainCam.GetComponent<MouseLook>().enabled = true;
         mainCam.GetComponent<mainCameraControls>().enabled = true;
         GameController.startSiren = true;

@@ -9,7 +9,7 @@ public class LoadUserIDMP : MonoBehaviour {
         if (nameStore.name == "")
         {
 #if UNITY_EDITOR
-            string url = "http://localhost/get_user_id.php?type=mp";
+            string url = "http://spanky.rutgers.edu/crowdevacgame/Real/get_user_id.php?type=mp";
 #else
             string url ;
             if(InternetConnectivityCheck.adminFlag)

@@ -87,14 +87,15 @@ public class FileScript : MonoBehaviour
                 cbhm.InnerText=FileScript.checkedBHM.ToString();
                 userdata.AppendChild(cbhm);
 
-            int l = GameObject.Find("los").transform.GetChild(1).GetComponent<Dropdown>().value;
-            string losstr = GameObject.Find("los").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
 
-            l = GameObject.Find("loa").transform.GetChild(1).GetComponent<Dropdown>().value;
-            string loastr = GameObject.Find("loa").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
+            int l = Camera.main.gameObject.GetComponent<bringUpMenu>().losDD.GetComponent<Dropdown>().value;
+            string losstr = Camera.main.gameObject.GetComponent<bringUpMenu>().losDD.GetComponent<Dropdown>().options[l].text;
 
-            l = GameObject.Find("homo").transform.GetChild(1).GetComponent<Dropdown>().value;
-            string homostr = GameObject.Find("homo").transform.GetChild(1).GetComponent<Dropdown>().options[l].text;
+            l = Camera.main.gameObject.GetComponent<bringUpMenu>().loaDD.GetComponent<Dropdown>().value;
+            string loastr = Camera.main.gameObject.GetComponent<bringUpMenu>().loaDD.GetComponent<Dropdown>().options[l].text;
+
+            l = Camera.main.gameObject.GetComponent<bringUpMenu>().lohDD.GetComponent<Dropdown>().value;
+            string homostr = Camera.main.gameObject.GetComponent<bringUpMenu>().lohDD.GetComponent<Dropdown>().options[l].text;
 
             XmlNode los = doc.CreateElement("LevelOfService");
                 los.InnerText = losstr;
@@ -297,7 +298,7 @@ public class FileScript : MonoBehaviour
             //request.Method="POST";
 
 #if UNITY_EDITOR
-            string url="http://localhost/store_data.php";
+            string url= "http://spanky.rutgers.edu/crowdevacgame/Real/store_data.php";
 #else
             string url ;
             if(InternetConnectivityCheck.adminFlag)
@@ -343,7 +344,7 @@ public class FileScript : MonoBehaviour
             //fs.Close();
 
 #if UNITY_EDITOR
-            url="http://localhost/store_image.php"; //-- local
+            url= "http://spanky.rutgers.edu/crowdevacgame/Real/store_image.php"; //-- local
 #else
             if(InternetConnectivityCheck.adminFlag)
             {
@@ -399,7 +400,7 @@ public class FileScript : MonoBehaviour
             //fs.Close();
 
 #if UNITY_EDITOR
-            url = "http://localhost/store_heatmap_image.php"; //-- local
+            url = "http://spanky.rutgers.edu/crowdevacgame/Real/store_heatmap_image.php"; //-- local
 #else
             if(InternetConnectivityCheck.adminFlag)
             {
@@ -467,7 +468,7 @@ public class FileScript : MonoBehaviour
             //fs.Close();
 
 #if UNITY_EDITOR
-            url = "http://localhost/store_image_full.php"; //-- local
+            url = "http://spanky.rutgers.edu/crowdevacgame/Real/store_image_full.php"; //-- local
 #else
             if(InternetConnectivityCheck.adminFlag)
             {
@@ -524,7 +525,7 @@ public class FileScript : MonoBehaviour
             //fs.Close();
 
 #if UNITY_EDITOR
-            url = "http://localhost/store_heatmap_image_full.php"; //-- local
+            url = "http://spanky.rutgers.edu/crowdevacgame/Real/store_heatmap_image_full.php"; //-- local
 #else
             if(InternetConnectivityCheck.adminFlag)
             {
@@ -570,7 +571,7 @@ public class FileScript : MonoBehaviour
             //fs.Close();
 
 #if UNITY_EDITOR
-            url = "http://localhost/store_layout_image.php"; //-- local
+            url = "http://spanky.rutgers.edu/crowdevacgame/Real/store_layout_image.php"; //-- local
 #else
             if(InternetConnectivityCheck.adminFlag)
             {
@@ -636,7 +637,7 @@ public class FileScript : MonoBehaviour
             //fs.Close();
 
 #if UNITY_EDITOR
-            url = "http://localhost/store_heatmapCSV.php"; //-- local
+            url = "http://spanky.rutgers.edu/crowdevacgame/Real/store_heatmapCSV.php"; //-- local
 #else
             if(InternetConnectivityCheck.adminFlag)
             {

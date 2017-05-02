@@ -8,7 +8,7 @@ public class LoadRunIdSP : MonoBehaviour {
 	IEnumerator Start () {
 
 #if UNITY_EDITOR
-        string url = "http://localhost/get_run_id.php?type=sp&scene=" + SceneManager.GetActiveScene().name;
+        string url = "http://spanky.rutgers.edu/crowdevacgame/Real/get_run_id.php?type=sp&scene=" + SceneManager.GetActiveScene().name;
 #else
             string url ;
             if(InternetConnectivityCheck.adminFlag)

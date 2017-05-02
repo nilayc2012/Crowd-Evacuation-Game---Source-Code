@@ -9,7 +9,7 @@ public class LoadRunId : MonoBehaviour {
 
 
 #if UNITY_EDITOR
-        string url ="http://localhost/get_run_id.php?type=mp&scene="+SceneManager.GetActiveScene().name;
+        string url = "http://spanky.rutgers.edu/crowdevacgame/Real/get_run_id.php?type=mp&scene=" + SceneManager.GetActiveScene().name;
 #else
             string url ;
             if(InternetConnectivityCheck.adminFlag)

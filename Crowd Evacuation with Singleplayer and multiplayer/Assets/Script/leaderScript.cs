@@ -42,7 +42,7 @@ public class leaderScript : MonoBehaviour {
             Debug.Log(datapassing.type);
             if (datapassing.type.Contains("Single Player"))
 #if UNITY_EDITOR
-                url = "http://localhost/store_data.php?scene=Level" + i.ToString()+ "SinglePlayer"+ "&loa=" + datapassing.loa + "&homo=" + datapassing.homo + "&type=sp"+"&los=" + datapassing.los;  //--local
+                url = "http://spanky.rutgers.edu/crowdevacgame/Real/store_data.php?scene=Level" + i.ToString()+ "SinglePlayer"+ "&loa=" + datapassing.loa + "&homo=" + datapassing.homo + "&type=sp"+"&los=" + datapassing.los;  //--local
 #else
             if(InternetConnectivityCheck.adminFlag)
             {
@@ -55,7 +55,7 @@ public class leaderScript : MonoBehaviour {
 #endif
             else
 #if UNITY_EDITOR
-                url = "http://localhost/store_data.php?scene=Level" + i.ToString() + "&loa=" + datapassing.loa + "&homo=" + datapassing.homo + "&type=mp"+"&los=" + datapassing.los;   //--local
+                url = "http://spanky.rutgers.edu/crowdevacgame/Real/store_data.php?scene=Level" + i.ToString() + "&loa=" + datapassing.loa + "&homo=" + datapassing.homo + "&type=mp"+"&los=" + datapassing.los;   //--local
 #else
             if(InternetConnectivityCheck.adminFlag)
             {
